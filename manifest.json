@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Censor israel",
+    "version": "1.0",
+    "description": "Replaces the word israel with the poop emoji on all websites",
+    "permissions": ["storage", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["scripts/content.js"],
+            "run_at": "document_idle",
+            "all_frames": true
+        }
+    ]
+}
